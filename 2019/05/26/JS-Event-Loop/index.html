@@ -96,16 +96,18 @@
 
 
 
-  <meta name="description" content="Web Developer &amp; Designer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Johnson">
-<meta property="og:url" content="https://wyshk2007.github.io/index.html">
+  <meta name="description" content="事件循环的顺序，决定了 JavaScript 代码的执行顺序。它从 script (整体代码) 开始第一次循环。之后全局上下文进入函数调用栈。直到调用栈清空(只剩全局)，然后执行所有的 Micro Task。当所有可执行的 Micro Task 执行完毕之后。循环再次从 Macro Task 开始，找到其中一个任务队列执行完毕，然后再执行所有的 Micro Task，在执行 Micro Task、">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS-Event-Loop">
+<meta property="og:url" content="https://wyshk2007.github.io/2019/05/26/JS-Event-Loop/index.html">
 <meta property="og:site_name" content="Johnson">
-<meta property="og:description" content="Web Developer &amp; Designer">
+<meta property="og:description" content="事件循环的顺序，决定了 JavaScript 代码的执行顺序。它从 script (整体代码) 开始第一次循环。之后全局上下文进入函数调用栈。直到调用栈清空(只剩全局)，然后执行所有的 Micro Task。当所有可执行的 Micro Task 执行完毕之后。循环再次从 Macro Task 开始，找到其中一个任务队列执行完毕，然后再执行所有的 Micro Task，在执行 Micro Task、">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-26T03:59:19.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Johnson">
-<meta name="twitter:description" content="Web Developer &amp; Designer">
+<meta name="twitter:title" content="JS-Event-Loop">
+<meta name="twitter:description" content="事件循环的顺序，决定了 JavaScript 代码的执行顺序。它从 script (整体代码) 开始第一次循环。之后全局上下文进入函数调用栈。直到调用栈清空(只剩全局)，然后执行所有的 Micro Task。当所有可执行的 Micro Task 执行完毕之后。循环再次从 Macro Task 开始，找到其中一个任务队列执行完毕，然后再执行所有的 Micro Task，在执行 Micro Task、">
 
 
 
@@ -113,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://wyshk2007.github.io/">
+  <link rel="canonical" href="https://wyshk2007.github.io/2019/05/26/JS-Event-Loop/">
 
 
 
@@ -123,7 +125,7 @@
   };
 </script>
 
-  <title>Johnson</title>
+  <title>JS-Event-Loop | Johnson</title>
   
 
 
@@ -171,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,9 +273,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -306,10 +307,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blogs/2019/05/26/JS-Event-Loop/" class="post-title-link" itemprop="url">JS-Event-Loop</a>
+          <h1 class="post-title" itemprop="name headline">JS-Event-Loop
+
               
             
           </h1>
@@ -373,9 +372,7 @@
       
 
       
-        
-          
-            <p>事件循环的顺序，决定了 JavaScript 代码的执行顺序。它从 script (整体代码) 开始第一次循环。之后全局上下文进入函数调用栈。直到调用栈清空(只剩全局)，然后执行所有的 Micro Task。当所有可执行的 Micro Task 执行完毕之后。循环再次从 Macro Task 开始，找到其中一个任务队列执行完毕，然后再执行所有的 Micro Task，在执行 Micro Task、Macro Task 的时候同样遵循 Event Loop 原则，就这样一直循环下去。</p>
+        <p>事件循环的顺序，决定了 JavaScript 代码的执行顺序。它从 script (整体代码) 开始第一次循环。之后全局上下文进入函数调用栈。直到调用栈清空(只剩全局)，然后执行所有的 Micro Task。当所有可执行的 Micro Task 执行完毕之后。循环再次从 Macro Task 开始，找到其中一个任务队列执行完毕，然后再执行所有的 Micro Task，在执行 Micro Task、Macro Task 的时候同样遵循 Event Loop 原则，就这样一直循环下去。</p>
 <p>在讨论 Micro Task、Macro Task 之前我们先来看一个例子，分析以下代码并思考 log 打的印顺序</p>
 <blockquote>
 <p>示例代码</p>
@@ -422,8 +419,6 @@
 </li>
 </ol>
 
-          
-        
       
     </div>
 
@@ -444,14 +439,20 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/blogs/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -461,14 +462,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -488,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -548,6 +559,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-Loop"><span class="nav-number">1.</span> <span class="nav-text">Event Loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Micro-Task、Macro-Task"><span class="nav-number">2.</span> <span class="nav-text">Micro Task、Macro Task</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -676,6 +704,10 @@
 
 
   
+  <script src="/blogs/js/scrollspy.js?v=7.1.1"></script>
+<script src="/blogs/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -691,6 +723,8 @@
 
   
 
+
+  
 
 
   

@@ -235,6 +235,57 @@
         
         
           
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-archives">
 
     
@@ -402,7 +453,7 @@
 <blockquote>
 <p>运行结果为：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">script start</span><br><span class="line">script end</span><br><span class="line">promise 1</span><br><span class="line">promise 2</span><br><span class="line">setTimeout 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">script start</span><br><span class="line">script end</span><br><span class="line">promise 1</span><br><span class="line">promise 2</span><br><span class="line">setTimeout 1</span><br></pre></td></tr></table></figure>
 <p>先明白几个概念</p>
 <h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><p>Event Loop：事件循环</p>
 <p>我们知道 JavaScript 是单线程语言，一心不能二用，也就是说它只能把一件事干完才能去干另一件事，但前端的一些任务是非常耗时的，比如网络请求，定时器和事件监听，如果让它们和别的任务一样，都老老实实的排队等待执行的话，执行效率会非常的低，甚至导致页面的假死。所以为了保证使用流畅，浏览器采用了 Event Loop 事件循环系统来管理，把那些耗时的任务放入 task queues 栈中，等主程序执行完再执行 task queues 中的任务，通常使用回调函数监听 task queues 中的任务状态。</p>

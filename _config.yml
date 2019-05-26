@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Johnson's Blogs
-subtitle:
+title: { Johnson's Blogs }
+subtitle: 我走的很慢, 但我从不后退
 description: Web Developer & Designer
 keywords:
 author: Johnson WU
@@ -62,7 +62,19 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  编程: programming
+  算法: algorithm
+  数据库: database
+  生活: life
+  其它: other
+  
 tag_map:
+  js: javascript
+  node: nodejs
+  typescript: typescript
+  rust: rust
+  webassembly: webassembly
+  mysql: mysql
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date

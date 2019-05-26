@@ -1,6 +1,7 @@
 ---
 title: Webassembly-Introduce
 date: 2019-05-26 17:32:59
+categories: 编程
 tags: webassembly
 ---
 

@@ -441,7 +441,7 @@
         
           
             <p>
-              我们知道 JavaScript 是一门脚本语言，具有动态类型和灵活的表达力，我们知道脚本语言通常要解释运行，这也将要消耗一些性能开销，于是 Google 在 2009 年在 V8 中引入了 JIT(Just in time compiling) 技术，把 JavaScript 运行时的性能推到了顶峰
+              我们知道 JavaScript 是一门脚本语言，具有动态类型和灵活的表达力，我们知道脚本语言通常要解释运行，这也将要消耗一些性能开销，于是 Google 在 2009 年在 V8 中引入了 JIT(Just in time compiling) 技术，把 JavaScript 运行时的性能推到了顶峰，同年利用 V8 引擎诞生了 Node.js，打开了使用 JavaScript 写后端应用的大门。对于目前写网络应用而言 JavaScript 已经足够用了，加上 Google V8 引擎能帮我们解决
               ...
             </p>
           <!--noindex-->
@@ -594,7 +594,8 @@
         
           
             <p>
-              事件循环的顺序，决定了 JavaScript 代码的执行顺序。它从 script (整体代码) 开始第一次循环。之后全局上下文进入函数调用栈。直到调用栈清空(只剩全局)，然后执行所有的 Micro Task。当所有可执行的 Micro Task 执行完毕之后。循环再次从 Macro Task 开始，
+              事件循环的顺序，决定了 JavaScript 代码的执行顺序。它从 script (整体代码) 开始第一次循环。之后全局上下文进入函数调用栈。直到调用栈清空(只剩全局)，然后执行所有的 Micro Task。当所有可执行的 Micro Task 执行完毕之后。循环再次从 Macro Task 开始，找到其中一个任务队列执行完毕，然后再执行所有的 Micro Task，在执行 Micro Task、Macro Task 的时候同样遵循 Event Loop 原则，就这样一直循环下去。
+在讨论 Mi
               ...
             </p>
           <!--noindex-->

@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: { Johnson's Blogs }
+title: Johnson's Blogs
 subtitle: 我走的很慢, 但我从不后退
 description: Web Developer & Designer
 keywords:
@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://wyshk2007.github.io
+url: http://riceball.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

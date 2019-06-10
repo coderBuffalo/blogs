@@ -103,17 +103,18 @@
 
 
 
-  <meta name="description" content="Web Developer &amp; Designer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://riceball.top/categories/index.html">
+  <meta name="description" content="上一篇文章有简单介绍Webassembly格式, 以及利用在线转化工具把C代码编辑到Webassembly. 这一篇文章我们继续探讨如何将Rust语言源代码编译到Webassembly并在谷歌浏览器中运行。Rust是火狐公司开发出来的一款静态编译型语言, Rust语言的详细介绍可以看官网. 之前例子在实际项目中的应用还要很多工作要做，比如如何在C中调用浏览器环境中的API，JS引擎的数据结构如何传">
+<meta name="keywords" content="webassembly, rust">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webassembly-Rust">
+<meta property="og:url" content="http://riceball.top/2019/06/10/Webassembly-Rust/index.html">
 <meta property="og:site_name" content="Johnson&#39;s Blogs">
-<meta property="og:description" content="Web Developer &amp; Designer">
+<meta property="og:description" content="上一篇文章有简单介绍Webassembly格式, 以及利用在线转化工具把C代码编辑到Webassembly. 这一篇文章我们继续探讨如何将Rust语言源代码编译到Webassembly并在谷歌浏览器中运行。Rust是火狐公司开发出来的一款静态编译型语言, Rust语言的详细介绍可以看官网. 之前例子在实际项目中的应用还要很多工作要做，比如如何在C中调用浏览器环境中的API，JS引擎的数据结构如何传">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T13:41:32.694Z">
+<meta property="og:updated_time" content="2019-06-10T16:19:33.029Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
-<meta name="twitter:description" content="Web Developer &amp; Designer">
+<meta name="twitter:title" content="Webassembly-Rust">
+<meta name="twitter:description" content="上一篇文章有简单介绍Webassembly格式, 以及利用在线转化工具把C代码编辑到Webassembly. 这一篇文章我们继续探讨如何将Rust语言源代码编译到Webassembly并在谷歌浏览器中运行。Rust是火狐公司开发出来的一款静态编译型语言, Rust语言的详细介绍可以看官网. 之前例子在实际项目中的应用还要很多工作要做，比如如何在C中调用浏览器环境中的API，JS引擎的数据结构如何传">
 
 
 
@@ -121,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://riceball.top/categories/">
+  <link rel="canonical" href="http://riceball.top/2019/06/10/Webassembly-Rust/">
 
 
 
@@ -131,7 +132,7 @@
   };
 </script>
 
-  <title>分类 | Johnson's Blogs</title>
+  <title>Webassembly-Rust | Johnson's Blogs</title>
   
 
 
@@ -272,7 +273,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -367,91 +368,307 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://riceball.top/2019/06/10/Webassembly-Rust/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Johnson WU">
+      <meta itemprop="description" content="Web Developer & Designer">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Johnson's Blogs">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">分类
-
-</h2>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
+          <h2 class="post-title" itemprop="name headline">Webassembly-Rust
+
               
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
               
                 
-                  
+              
+
+              <time title="创建时间：2019-06-10 07:54:44" itemprop="dateCreated datePublished" datetime="2019-06-10T07:54:44+08:00">2019-06-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-11 00:19:33" itemprop="dateModified" datetime="2019-06-11T00:19:33+08:00">2019-06-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
                 
               
-              目前共计 1 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">编程</a><span class="category-list-count">3</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>上一篇文章有简单介绍Webassembly格式, 以及利用在线转化工具把C代码编辑到Webassembly. 这一篇文章我们继续探讨如何将Rust语言源代码编译到Webassembly并在谷歌浏览器中运行。Rust是火狐公司开发出来的一款静态编译型语言, Rust语言的详细介绍可以看<a href="https://www.rust-lang.org/" target="_blank" rel="noopener">官网</a>.</p>
+<p>之前例子在实际项目中的应用还要很多工作要做，比如如何在C中调用浏览器环境中的API，JS引擎的数据结构如何传递到C中等等，相较于之前介绍C语言编译到Webassembly并在浏览器运行的简单尝试，Rust社区一直积极的推动Webassembly于web端实际应用，并开发出一系列工具与类库。</p>
+<h2 id="安装-Rust-环境"><a href="#安装-Rust-环境" class="headerlink" title="安装 Rust 环境"></a>安装 Rust 环境</h2><h3 id="安装Rust"><a href="#安装Rust" class="headerlink" title="安装Rust"></a>安装Rust</h3><p>前往 <a href="https://www.rust-lang.org/install.html" target="_blank" rel="noopener">Install Rust</a> 页面并跟随指示安装 Rust。这里会安装一个名为 “rustup” 的工具，这个工具能让你管理多个不同版本的 Rust。默认情况下，它会安装用于惯常Rust开发的 stable 版本 Rust Release。Rustup 会安装 Rust 的编译器 rustc、Rust 的包管理工具 cargo、Rust 的标准库 rust-std 以及一些有用的文档 rust-docs。</p>
+<h3 id="安装wasm-pack"><a href="#安装wasm-pack" class="headerlink" title="安装wasm-pack"></a>安装wasm-pack</h3><p>要将Rust模块构建为前端npm包，我们需要一个额外工具 wasm-pack。它会帮助我们把我们的代码编译成 WebAssembly 并制造出正确的 npm 包。使用下面的命令可以下载并安装它：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cargo install wasm-pack</span><br></pre></td></tr></table></figure></p>
+<h2 id="构建我们的-WebAssembly-npm-包"><a href="#构建我们的-WebAssembly-npm-包" class="headerlink" title="构建我们的 WebAssembly npm 包"></a>构建我们的 WebAssembly npm 包</h2><p>创建一个新的 Rust 包。打开你用来存放你私人项目的目录，做这些事：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cargo new --lib wasm-test</span><br><span class="line">     Created library `wasm-test` project</span><br></pre></td></tr></table></figure></p>
+<p>这里会在名为 wasm-test 的子目录里创建一个新的库，里面有下一步之前你所需要的一切：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+-- Cargo.toml</span><br><span class="line">+-- src</span><br><span class="line">    +-- lib.rs</span><br></pre></td></tr></table></figure></p>
+<p>这里有一个 Cargo.toml 文件，这是我们配置构建的方式。如果你用过 npm 的 package.json，你应该会感到很熟悉。Cargo 的用法和它们类似。<br>接下来，Cargo 在 src/lib.rs 生成了一些 Rust 代码：</p>
+<h3 id="来写点-Rust-代码"><a href="#来写点-Rust-代码" class="headerlink" title="来写点 Rust 代码"></a>来写点 Rust 代码</h3><p>在 src/lib.rs 写一些代码替换掉原来的：<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">crate</span> wasm_bindgen; <span class="comment">// 申明外部依赖库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> wasm_bindgen::prelude::*; <span class="comment">// 导入外部依赖库</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">在 #[] 中的内容叫做 "属性"，并以某种方式改变下面的语句。在这种情况下，下面的语句是一个 extern，</span></span><br><span class="line"><span class="comment">它将告诉 Rust 我们想调用一些外部定义的函数。这个属性 wasm-bindgen 告诉我们如何找到这些函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#[wasm_bindgen]</span></span><br><span class="line"><span class="keyword">extern</span> &#123; </span><br><span class="line">    <span class="keyword">pub</span> <span class="function"><span class="keyword">fn</span> <span class="title">alert</span></span>(s: &amp;<span class="built_in">str</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">我们又看到了 #[wasm_bindgen] 属性。在这里，它并非定义一个 extern 块，而是 fn，</span></span><br><span class="line"><span class="comment">这代表我们希望能够在 JavaScript 中使用这个 Rust 函数。 这和 extern 正相反：我们并非引入函数，而是要把函数给外部世界使用。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#[wasm_bindgen]</span></span><br><span class="line"><span class="keyword">pub</span> <span class="function"><span class="keyword">fn</span> <span class="title">greet</span></span>(name: &amp;<span class="built_in">str</span>) &#123;</span><br><span class="line">    alert(&amp;<span class="built_in">format!</span>(<span class="string">"Hello, &#123;&#125;!"</span>, name));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="把我们的代码编译到-WebAssembly"><a href="#把我们的代码编译到-WebAssembly" class="headerlink" title="把我们的代码编译到 WebAssembly"></a>把我们的代码编译到 WebAssembly</h3><p>为了能够正确的编译我们的代码，首先我们需要配置 Cargo.toml。打开这个文件，将内容改为如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[package]</span><br><span class="line">name = &quot;wasm-test&quot;</span><br><span class="line">version = &quot;0.1.0&quot;</span><br><span class="line">authors = [&quot;Your Name &lt;you@example.com&gt;&quot;]</span><br><span class="line">description = &quot;A sample project with wasm-pack&quot;</span><br><span class="line">license = &quot;MIT/Apache-2.0&quot;</span><br><span class="line">repository = &quot;https://github.com/yourgithubusername/wasm-test&quot;</span><br><span class="line"></span><br><span class="line">[lib]</span><br><span class="line">crate-type = [&quot;cdylib&quot;]</span><br><span class="line"></span><br><span class="line">[dependencies]</span><br><span class="line">wasm-bindgen = &quot;0.2&quot;</span><br></pre></td></tr></table></figure></p>
+<p>最重要的是添加底下的部分。第一个部分 — [lib] — 告诉 Rust 为我们的包建立一个 cdylib<br>[dependencies] 部分。在这里我们告诉 Cargo 我们需要依赖哪个版本的 wasm-bindgen</p>
+<h3 id="构建NPM包"><a href="#构建NPM包" class="headerlink" title="构建NPM包"></a>构建NPM包</h3><p>Rust源代码完成，依赖配置也设置好了，准备构建NPM前端模块！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wasm-pack build</span><br></pre></td></tr></table></figure></p>
+<p>wasm-pack build 会进行如下几个步骤：</p>
+<ol>
+<li>把Rust代码编译为 WebAssembly.</li>
+<li>在生成的 WebAssembly文件执行 wasm-bindgen , 生成一个npm能识别JS模块，这个模块包含刚生成WebAssembly文件.</li>
+<li>生成一个 pkg 文件夹，并把生成的JS模块与WebAssembly文件移入.</li>
+<li>读取 Cargo.toml 并生成对应的 package.json.</li>
+<li>拷贝 README.md（如果有的话）到 pkg文件夹.</li>
+</ol>
+<h2 id="在网站上使用刚生成的包"><a href="#在网站上使用刚生成的包" class="headerlink" title="在网站上使用刚生成的包"></a>在网站上使用刚生成的包</h2><p>新建一个前端文件夹site，并运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init -y</span><br></pre></td></tr></table></figure></p>
+<p>编译package.json<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"serve"</span>: <span class="string">"webpack-dev-server"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"webpack"</span>: <span class="string">"^4.25.1"</span>,</span><br><span class="line">    <span class="attr">"webpack-cli"</span>: <span class="string">"^3.1.2"</span>,</span><br><span class="line">    <span class="attr">"webpack-dev-server"</span>: <span class="string">"^3.1.10"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>新建一个webpack.config.js文件，内容如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"./index.js"</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>),</span><br><span class="line">    filename: <span class="string">"index.js"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  mode: <span class="string">"development"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>新建一个index.html文件，内容如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>hello-wasm example<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>新建一个index.js文件，内容如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> js = <span class="keyword">import</span>(<span class="string">"./pkg/wasm-test.js"</span>);</span><br><span class="line">js.then(<span class="function"><span class="params">js</span> =&gt;</span> &#123;</span><br><span class="line">  js.greet(<span class="string">"WebAssembly"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>打开控制台，运行：<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br><span class="line">$ npm run serve</span><br></pre></td></tr></table></figure></p>
+<p>打开谷歌浏览器，访问<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 应该会看到一个alert弹窗。</p>
+
       
     </div>
+
     
+
+    
+    
+    
+
+    
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+  <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Johnson WU wechat" style="width: 200px; max-width: 100%;">
+  <div>扫我微信</div>
+</div>
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/uploads/wechatpay.jpg" alt="Johnson WU 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/uploads/alipay.jpg" alt="Johnson WU 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
 
 
 
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Johnson WU</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
     
+    <a href="http://riceball.top/2019/06/10/Webassembly-Rust/" title="Webassembly-Rust">http://riceball.top/2019/06/10/Webassembly-Rust/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
-    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/webassembly-rust/" rel="tag"><i class="fa fa-tag"></i> webassembly, rust</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/26/Webassembly-Introduce/" rel="next" title="Webassembly-Introduce">
+                <i class="fa fa-chevron-left"></i> Webassembly-Introduce
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -471,8 +688,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -593,6 +819,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Rust-环境"><span class="nav-number">1.</span> <span class="nav-text">安装 Rust 环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Rust"><span class="nav-number">1.1.</span> <span class="nav-text">安装Rust</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装wasm-pack"><span class="nav-number">1.2.</span> <span class="nav-text">安装wasm-pack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建我们的-WebAssembly-npm-包"><span class="nav-number">2.</span> <span class="nav-text">构建我们的 WebAssembly npm 包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#来写点-Rust-代码"><span class="nav-number">2.1.</span> <span class="nav-text">来写点 Rust 代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把我们的代码编译到-WebAssembly"><span class="nav-number">2.2.</span> <span class="nav-text">把我们的代码编译到 WebAssembly</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建NPM包"><span class="nav-number">2.3.</span> <span class="nav-text">构建NPM包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在网站上使用刚生成的包"><span class="nav-number">3.</span> <span class="nav-text">在网站上使用刚生成的包</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -771,6 +1014,43 @@
 
   
 
+
+  
+    
+
+  
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+
+
+  
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '7ae663bae52500174b61',
+    clientSecret: '035aeedb4045460f2401a66019f48edf52e5e112',
+    repo: 'blogs',
+    owner: 'wyshk2007',
+    admin: ['wyshk2007'],
+    id: md5(location.pathname),
+    
+      language: window.navigator.language || window.navigator.userLanguage,
+    
+    distractionFreeMode: 'false'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
 
 
   
